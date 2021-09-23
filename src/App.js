@@ -12,9 +12,6 @@ function App() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
   const [showCart, setShowCart] = useState(false);
 
-  const showCartSide = () => {
-    setShowCart(true);
-  };
 
   return (
     <div className="container">

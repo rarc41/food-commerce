@@ -50,27 +50,27 @@ const Categories = () => {
 
   return (
     <Fragment>
-      <div class="title">
-        <div class="main-title">
+      <div className="title">
+        <div className="main-title">
           <h1>Restaurants</h1>
-          <img class="title-hamburguesa" src={Burger} alt="hamburguesa" />
+          <img className="title-hamburguesa" src={Burger} alt="hamburguesa" />
         </div>
-        <div class="title-button">
-          <img class="title-button-icon" src={Timer} alt="clock" />
+        <div className="title-button">
+          <img className="title-button-icon" src={Timer} alt="clock" />
           <p>
             Delivery: <span>Now</span>
           </p>
-          <img class="title-button-icon" src={Arrow} alt="arrow down" />
+          <img className="title-button-icon" src={Arrow} alt="arrow down" />
         </div>
       </div>
 
-      <div class="categoy-list">
-        <div class="categoy-list-btns">
+      <div className="categoy-list">
+        <div className="categoy-list-btns">
             {categories.map((category)=> (
-                <CategoryBtn img={category.icon} name={category.name}/>
+                <CategoryBtn key={category.id} img={category.icon} name={category.name}/>
             ))}
         </div>
-        <div class="right-btn">
+        <div className="right-btn">
           <img src={Arrow} alt="right arrow" />
         </div>
       </div>

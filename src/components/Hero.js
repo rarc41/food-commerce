@@ -5,18 +5,18 @@ import Arrow from "../assets/icons/109617.svg";
 
 const Hero = () => {
   return (
-    <div class="hero">
-      <img class="hero-img" src={HeaderImage} alt="hero" />
-      <div class="hero-text">
+    <div className="hero">
+      <img className="hero-img" src={HeaderImage} alt="hero" />
+      <div className="hero-text">
         <h2>
           $0 delivery for 30 days!
           <span>
-            <img class="hero-text-icon" src={OfferEmoji} alt="offer" />
+            <img className="hero-text-icon" src={OfferEmoji} alt="offer" />
           </span>
         </h2>
         <p>$0 delivery fee for orders over $10 for 30 days</p>
       </div>
-      <button class="hero-button">
+      <button className="hero-button">
         Learn more
         <img src={Arrow} alt="arrow" />
       </button>

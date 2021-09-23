@@ -80,7 +80,7 @@ const CartList = ({ currentCart }) => {
   return (
     <div className="cart-list">
       {exampleList.map((product) => (
-        <Product inCart={true} product={product} />
+        <Product key={product.id} inCart={true} product={product} />
       ))}
     </div>
   );

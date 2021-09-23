@@ -4,12 +4,12 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <div class="hamburger">=</div>
+        <div className="hamburger">=</div>
 
-        <div class="logo">Chukwudi</div>
+        <div className="logo">Chukwudi</div>
       </nav>
 
-      <input class="header-input" type="text" placeholder="Search" />
+      <input className="header-input" type="text" placeholder="Search" />
     </header>
   );
 };

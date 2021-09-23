@@ -8,7 +8,7 @@ const ButtonSideShow = ({onClick, active}) => {
 
   return (
     <button className={active? 'btn-cart ripple-active':"btn-cart ripple"} onClick={onClick}>
-      <img style={iconStyle} src={Cart} />
+      <img style={iconStyle} src={Cart} alt='cart'/>
     </button>
   );
 };

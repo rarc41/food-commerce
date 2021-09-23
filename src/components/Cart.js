@@ -74,7 +74,7 @@ const Cart = ({ elementsCart, show }) => {
   };
 
   return (
-    <aside className={show==true? "cart": 'cart inactive'}>
+    <aside className={show===true? "cart": 'cart inactive'}>
       <nav className="icons-info">
         {/* <ProfileIconBtn></ProfileIconBtn>
         <CounterIconBtn elementsCart={4} /> */}

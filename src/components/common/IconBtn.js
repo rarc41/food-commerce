@@ -1,4 +1,6 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
+
 
 const IconBtn = ({
   img,
@@ -13,6 +15,8 @@ const IconBtn = ({
   fontSize,
   margin,
 }) => {
+
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 411px)" });
   const styleProfileIcon = {
     display: "flex",
     justifyContent: "center",
@@ -23,7 +27,7 @@ const IconBtn = ({
     backgroundColor: bgColor ? bgColor : "trasparent",
     borderRadius: bRadius,
     // opacity: opacity
-    margin: margin ? margin : "0 2rem",
+    margin:  isSmallScreen ? '1rem': (margin ? margin : "0 2rem"),
   };
 
   const styleIcon = {
@@ -35,6 +39,8 @@ const IconBtn = ({
     fontWeight: "bold",
     fontSize: fontSize,
   };
+
+  
   return (
     <div style={styleProfileIcon}>
       {img ? (

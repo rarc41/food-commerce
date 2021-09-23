@@ -7,7 +7,7 @@ import CartList from "./CartList";
 import IncDecBtn from "./common/IncDecBtn";
 import Arrow from "../assets/icons/109617.svg";
 
-const Cart = ({ elementsCart }) => {
+const Cart = ({ elementsCart, show }) => {
   const styleEmoji = {
     height: "4rem",
     width: "4rem",
@@ -74,7 +74,7 @@ const Cart = ({ elementsCart }) => {
   };
 
   return (
-    <aside className="cart">
+    <aside className={show==true? "cart": 'cart inactive'}>
       <nav className="icons-info">
         {/* <ProfileIconBtn></ProfileIconBtn>
         <CounterIconBtn elementsCart={4} /> */}

@@ -11,6 +11,8 @@
   --purple: #503e9d;
 }
 
+/* Globales */
+
 * {
   padding: 0;
   margin: 0;
@@ -33,7 +35,7 @@ body {
 .container {
   display: flex;
   height: 100%;
-  /* width: 100%; */
+  width: 100%;
   margin-bottom: 4rem;
   border-bottom: 1px solid var(--yellow);
   border-bottom-left-radius: 4% 4rem;
@@ -62,13 +64,41 @@ body {
     width: 100%;
   }
 
-  aside,
-  .sidebar,
-  .cart,
-  .icons-info,
-  .profile-icon {
-    display: none;
+  .cart {
+    /* display: none !important; */
+    /* width: 0 !important; */
   }
+
+  .cart-active {
+    /* width: 65% !important; */
+  }
+}
+
+.btn-cart {
+  position: fixed;
+  border: none;
+  outline: none;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 25%;
+  box-shadow: 0 0 4px #999;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+.ripple-active {
+  position: fixed;
+
+  background-color: var(--yellow);
+}
+
+.ripple {
+  background-color: white;
+  transition: background 0.6s;
+}
+.ripple:active {
+  background-color: var(--yellow);
+  transition: background 0s;
 }
 
 /* ===== header ===== */
@@ -416,9 +446,68 @@ h1 {
   left: 75%;
   width: 25%;
   height: 100%;
-
+  transition: 1s;
   flex-direction: column;
-  /* justify-content: start; */
+}
+
+.inactive {
+  position: fixed;
+  /* display: none; */
+}
+
+@media (max-width: 768px) {
+  .cart {
+    position: fixed;
+    z-index: 2;
+    width: 65%;
+    height: 100%;
+    background: var(--white);
+    /* flex-direction: column; */
+    justify-content: center;
+    /* top: 0; */
+    transition: 0.1s;
+    left: 30.5rem;
+    /* display: none; */
+  }
+
+  .inactive {
+    transition: 0.5s;
+    position: fixed;
+    display: none;
+  }
+
+}
+
+@media (max-width: 540px) {
+  .cart {
+    /* top: 0; */
+    /* width: 75%; */
+    left: 21.5rem;
+    /* display: none; */
+  }
+}
+
+@media (max-width: 411px) {
+  .cart {
+    /* top: 0; */
+    /* width: 75%; */
+    font-size: 1rem;
+    left: 15.5rem;
+    /* display: none; */
+  }
+
+  .direction-container p {
+    font-size: 100% !important; 
+  }
+}
+
+@media (max-width: 375px) {
+  .cart {
+    /* top: 0; */
+    /* width: 75%; */
+    left: 14.5rem;
+    /* display: none; */
+  }
 }
 
 .icons-info {
@@ -469,3 +558,5 @@ h1 {
   height: 5rem;
   width: 7rem;
 }
+
+

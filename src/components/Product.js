@@ -32,7 +32,7 @@ const Product = ({ product, inCart }) => {
             <img
               src={image}
               alt={name}
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "100%",  borderRadius: '1rem'}}
             />
           </div>
           <IconBtn text={3} size="2rem" fontSize="1.5rem" margin="0 1rem"></IconBtn>

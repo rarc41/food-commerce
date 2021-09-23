@@ -1,8 +1,8 @@
 import React from "react";
 import Product from "./Product";
 
-const Products = () => {
-  let products = [
+const CartList = ({ currentCart }) => {
+  const exampleList = [
     {
       id: 1,
       name: "Filete de ternera con salsa",
@@ -76,13 +76,14 @@ const Products = () => {
         "https://images.pexels.com/photos/156114/pexels-photo-156114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
     },
   ];
+
   return (
-    <div class="product-list">
-        {products.map(product=>(
-            <Product key={product.id} product={product}/>
-        ))}
+    <div className="cart-list">
+      {exampleList.map((product) => (
+        <Product inCart={true} product={product} />
+      ))}
     </div>
   );
 };
 
-export default Products;
+export default CartList;

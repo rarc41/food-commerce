@@ -64,8 +64,8 @@ const Categories = () => {
         </div>
       </div>
 
-      <div class="lista-navegacion">
-        <div class="lista-navegacion-btns">
+      <div class="categoy-list">
+        <div class="categoy-list-btns">
             {categories.map((category)=> (
                 <CategoryBtn img={category.icon} name={category.name}/>
             ))}

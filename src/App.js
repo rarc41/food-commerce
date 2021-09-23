@@ -1,25 +1,26 @@
 import Header from "./components/Header";
-import HeaderImage from "./assets/images/headerimage.png";
-import OfferEmoji from "./assets/images/d.png";
-import Arrow from "./assets/icons/109617.svg";
 import Hero from "./components/Hero";
 import Categories from "./components/Categories";
-import Products from "./components/Products"
+import Products from "./components/Products";
+import Cart from "./components/Cart";
+
+import { useMediaQuery } from "react-responsive";
 
 function App() {
+
+const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
+
   return (
     <div className="container">
       <section className="main">
         <Header></Header>
         <Hero></Hero>
         <Categories></Categories>
-        <Products/>
-
-
+        <Products />
       </section>
-      <aside>
-        <h1>aside</h1>
-      </aside>
+      {!isTabletOrMobile && (
+        <Cart elementsCart={4}></Cart>
+      )}
     </div>
   );
 }

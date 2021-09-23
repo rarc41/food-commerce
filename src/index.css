@@ -5,11 +5,12 @@
 	--black: rgb(13, 8, 5);
 	--grayish-input: #dedede;
 	--grayish-background: rgb(253, 253, 251);
-	--yellow: rgb(251, 213, 96);
+	--yellow: #fbd560;
 	--soft-yellow: rgb(254, 247, 236);
 	--orange: rgb(251, 109, 59);
-	--purple: rgb(80, 62, 157);
+	--purple: #503E9D;
 }
+
 
 * {
 	padding: 0;
@@ -26,6 +27,7 @@ body {
 	/* display: flex;
 	justify-content: space-between;
 	align-items: center; */
+	/* margin: 2rem; */
 	font-family: 'Poppins', sans-serif;
 
 
@@ -39,16 +41,20 @@ body {
 	border-bottom: 1px solid var(--yellow);
 	border-bottom-left-radius: 4% 4rem;
 	border-bottom-right-radius: 4% 4rem;
+	border-radius: 4rem;
+	margin: 0;
 	background: var(--white);
 }
 
 .main {
 	width: 75%;
+	height: 100%;
 	padding: 2.5% 5%;
 	border-right: 1px solid var(--yellow);
+	background-color: var(--pure-white);
 }
 
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1280px) {
 	html {
 		font-size: 55%;
 	}
@@ -59,7 +65,7 @@ body {
 		width: 100%;
 	}
 
-	aside {
+	aside, .sidebar, .cart, .icons-info, .profile-icon {
 		display: none;
 	}
 }
@@ -267,23 +273,23 @@ h1 {
 	}
 }
 
-/* ===== Lista navegacion ===== */
+/* ===== Lista btn-category ===== */
 
-.lista-navegacion {
+.categoy-list {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 5rem;
 }
 
-.lista-navegacion-btns {
+.categoy-list-btns {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 	overflow: hidden;
 }
 
-.navegacion {
+.btn-category {
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
@@ -296,16 +302,16 @@ h1 {
 	background: var(--pure-white);
 }
 
-.navegacion:hover {
+.btn-category:hover {
 	background: var(--yellow);
 }
 
-.navegacion p {
+.btn-category p {
 	font-size: calc(0.5rem + 0.5vw) /* 1rem */;
 	font-weight: 600;
 }
 
-.navegacion-img {
+.btn-category-img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -316,7 +322,7 @@ h1 {
 	border-radius: 50%;
 	background: var(--pure-white);
 }
-.navegacion-img img {
+.btn-category-img img {
 	width: 2.2rem;
 }
 
@@ -335,9 +341,9 @@ h1 {
 	width: 1.2rem;
 }
 
-/* ===== Listado productos ===== */
+/* ===== Listado products ===== */
 
-.listado-productos {
+.product-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(calc(20rem + 1vw), 1fr));
 	/* grid-template-columns: repeat(3, 1fr); */
@@ -345,12 +351,12 @@ h1 {
 	margin-top: 8rem;
 }
 
-.producto h3 {
+.product h3 {
 	font-size: calc(0.8rem + 1vw);
 	font-weight: 500;
 }
 
-.producto-img {
+.product-img {
 	position: relative;
 	height: calc(14rem + 1vh) /* 15rem */;
 	margin-bottom: 2.5rem;
@@ -358,14 +364,14 @@ h1 {
 	overflow: hidden;
 }
 
-.producto-img img {
+.product-img img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	object-position: center center;
 }
 
-.producto-tiempo {
+.product-tiempo {
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -378,12 +384,12 @@ h1 {
 	background: var(--grayish-input);
 }
 
-.puntuacion {
+.qualification {
 	display: flex;
 	align-items: center;
 }
 
-.puntuacion img {
+.qualification img {
 	width: 1.2rem;
 	margin-right: 1rem;
 }
@@ -396,4 +402,68 @@ h1 {
 	color: var(--black);
 	font-weight: 600;
 	margin-right: 1.5rem;
+}
+
+/* Side bar */
+
+.cart {
+	display: flex;
+	position:fixed;
+	left: 75%;
+	width: 25%;
+	height: 100%;
+	
+	flex-direction: column;
+	/* justify-content: start; */
+}
+
+.icons-info {
+	justify-content: flex-end;
+	margin-top: 3rem;
+	display: flex;
+	height: 10rem;
+	/* width: 100%; */
+	background-color:trasparent
+}
+
+.direction-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 13rem;
+	width: 80%;
+	background-color: var(--purple);
+	justify-content:space-evenly;
+	padding: 0 3rem;
+	border-radius: 3rem;
+	color: var(--white);
+	margin: 2rem auto;
+	margin-top:7rem; 
+
+}
+
+.row-container{
+	display: flex;
+	/* justify-content:space-evenly; */
+	align-items: center;
+	justify-content:center
+}
+
+.cart-list{
+	display: flex;
+	flex-direction: column;
+	align-items: space-evenly;
+	overflow-x: hidden;
+	height: 25rem
+}
+
+.cart-item {
+	display: flex;
+
+}
+
+.cart-item-img {
+	display: flex;
+	height:5rem;
+	width:7rem;
 }

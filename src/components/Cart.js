@@ -5,6 +5,7 @@ import ClockIcon from "../assets/icons/149316.svg";
 import ProfileIcon from "../assets/icons/747376.svg";
 import CartList from "./CartList";
 import IncDecBtn from "./common/IncDecBtn";
+import Arrow from "../assets/icons/109617.svg";
 
 const Cart = ({ elementsCart }) => {
   const styleEmoji = {
@@ -55,12 +56,18 @@ const Cart = ({ elementsCart }) => {
     display: "flex",
     height: "7rem",
     width: "40%",
-    justifyContent: "space-between",
+    backgroundColor: "var(--yellow)",
+    border: "none",
+
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    borderTopLeftRadius: "15% 4rem",
+    borderBottomLeftRadius: "15% 4rem",
   };
 
   const stylePersonsCounter = {
     display: "flex",
-    flexDirection: 'column',
+    flexDirection: "column",
     height: "7rem",
     width: "40%",
     justifyContent: "space-evenly",
@@ -137,7 +144,12 @@ const Cart = ({ elementsCart }) => {
             <span>Persons</span>
             <IncDecBtn />
           </div>
-          <div style={styleCheckoutButton}></div>
+          <div style={styleCheckoutButton}>
+            <span style={{fontWeight: "bold", fontSize: "1.3rem"}}>Checkout</span>
+            <span style={{ display: "flex" }}>
+              <img src={Arrow} alt="arrow" style={{ height: "2rem" }} />
+            </span>
+          </div>
         </div>
       </div>
     </aside>

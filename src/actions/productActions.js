@@ -13,6 +13,9 @@ import {
 export const listProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
+
+    // the following statements view Cloud Firestore Docs (https://firebase.google.com/docs/firestore/quickstart?hl=es) 
+    // section, Reading data
     const data = await getDocs(collection(db, "productos"));
     const products = [];
     data.forEach((doc) => {

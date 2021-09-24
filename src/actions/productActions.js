@@ -1,16 +1,32 @@
-import axios from 'axios';
+// import axios from "axios";
+
+// this is for  connect with firebase
+import { collection, getDocs } from "firebase/firestore";
+import db from "../firebase/firebaseConfig";
 
 import {
-    PRODUCT_LIST_REQUEST,
-    PRODUCT_LIST_FAIL,
-    PRODUCT_LIST_SUCCESS,
-} from '../constants/productConstants'
+  PRODUCT_LIST_REQUEST,
+  PRODUCT_LIST_FAIL,
+  PRODUCT_LIST_SUCCESS,
+} from "../constants/productConstants";
 
-const listProducts = () => async (dispatch) => {
-    try {
-        dispatch({type: PRODUCT_LIST_REQUEST})
+export const listProducts = () => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_LIST_REQUEST });
+    const data = await getDocs(collection(db, "productos"));
+    const products = [];
+    data.forEach((doc) => {
+      // console.log(doc.data());
+      products.push(doc.data());
+    });
 
-    } catch (error) {
-        
-    }
-}
+    dispatch({ type: PRODUCT_LIST_SUCCESS, payload: products });
+  } catch (error) {
+      dispatch({ 
+          type: PRODUCT_LIST_FAIL,
+          payload: error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+        })
+  }
+};

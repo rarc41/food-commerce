@@ -25,7 +25,6 @@ const Product = ({ product, inCart, qty }) => {
   };
 
   const removeToCartHandler = () => {
-    console.log(product)
     dispatch(removeFromCart(product));
   }
 

@@ -2,14 +2,32 @@ import React, { Fragment } from "react";
 import StarIcon from "../assets/icons/149220.svg";
 import IconBtn from "./common/IconBtn";
 
-const Product = ({ product, inCart }) => {
-  const { name, image, qualification, time } = product;
+import {useDispatch, useSelector} from 'react-redux'
 
-  const styleInfo = { display: "flex", paddingLeft: "1rem", height:'4rem', width:'55%', justifyContent: 'space-between' , alignItems: 'center'}
+import { addToCart } from "../actions/cartActions";
+
+const styleInfo = {
+  display: "flex",
+  paddingLeft: "1rem",
+  height: "4rem",
+  width: "55%",
+  justifyContent: "space-between",
+  alignItems: "center",
+};
+
+const Product = ({ product, inCart, qty }) => {
+  const { name, image, qualification, time, id } = product;
+
+  const dispatch= useDispatch()
+
+  const addToCartHandler = () => {
+    dispatch(addToCart(id))
+  };
+
   return (
     <Fragment>
       {!inCart && (
-        <div className="product">
+        <div className="product" onClick={() => addToCartHandler()}>
           <div className="product-img">
             <img src={image} alt={name} />
             <div className="product-tiempo">{time}</div>
@@ -26,17 +44,25 @@ const Product = ({ product, inCart }) => {
 
       {inCart && (
         <div className="row-container" style={{ margin: "2rem" }}>
-          <div
-            className="cart-item-img"
-          >
+          <div className="cart-item-img">
             <img
               src={image}
               alt={name}
-              style={{ width: "100%", height: "100%",  borderRadius: '1rem'}}
+              style={{ width: "100%", height: "100%", borderRadius: "1rem" }}
             />
           </div>
-          <IconBtn text={3} size="2rem" fontSize="1.5rem" margin="0 1rem"></IconBtn>
-          <IconBtn text={"x"} size="1rem" fontSize="1.5rem" margin="0 1rem"></IconBtn>
+          <IconBtn
+            text={qty}
+            size="2rem"
+            fontSize="1.5rem"
+            margin="0 1rem"
+          ></IconBtn>
+          <IconBtn
+            text={"x"}
+            size="1rem"
+            fontSize="1.5rem"
+            margin="0 1rem"
+          ></IconBtn>
           <div style={styleInfo}>
             <h3>{product.name}</h3>
             <span>{product.price}</span>

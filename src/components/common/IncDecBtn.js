@@ -1,5 +1,7 @@
 import React, { useEffect, useState, Fragment } from "react";
 
+// this is a incremente/ decremente button used y the checkout section to set the persons quantity
+
 const styleButton = {
   display: "flex",
   justifyContent: "space-between",

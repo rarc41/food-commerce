@@ -4,6 +4,8 @@ import Timer from "../assets/icons/149316.svg";
 import Arrow from "../assets/icons/118740.svg";
 import CategoryBtn from "./CategoryBtn";
 
+// this component render the section with the category buttons section
+
 const Categories = () => {
   let categories = [
     {

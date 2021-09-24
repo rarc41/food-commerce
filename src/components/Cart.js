@@ -7,6 +7,10 @@ import CartList from "./CartList";
 import IncDecBtn from "./common/IncDecBtn";
 import Arrow from "../assets/icons/109617.svg";
 
+// this component is the complete sidebarm, 
+// the list of products on the current cart, 
+// is rendered in a child component of this  (CartList)
+
 const Cart = ({ elementsCart, show }) => {
   const styleEmoji = {
     height: "4rem",

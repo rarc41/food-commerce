@@ -1,6 +1,8 @@
 import React from "react";
 import Product from "./Product";
 
+// component to render the list of producs in the cart shopping
+
 const CartList = ({ currentCart }) => {
   const exampleList = [
     {

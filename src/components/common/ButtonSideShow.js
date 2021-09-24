@@ -1,6 +1,8 @@
 import React from "react";
 import Cart from "../../assets/icons/cart.svg";
 
+// this is the floating button used to shoy de side bar
+
 const ButtonSideShow = ({onClick, active}) => {
   const iconStyle = {
     height: "50%",

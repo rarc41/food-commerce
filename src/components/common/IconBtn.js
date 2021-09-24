@@ -1,6 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 
+// this component is a generic button icon, all props are optionals
 
 const IconBtn = ({
   img,

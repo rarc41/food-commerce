@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import StarIcon from "../assets/icons/149220.svg";
 import IconBtn from "./common/IconBtn";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { addToCart, removeFromCart } from "../actions/cartActions";
 

@@ -341,8 +341,6 @@ h1 {
   margin-right: 0.5rem;
   border-radius: 4rem;
   background: var(--pure-white);
-  -webkit-box-shadow: 0px 0px 36px -26px rgb(0 0 0 / 64%);
-  -moz-box-shadow: 0px 0px 36px -26px rgb(0 0 0 / 64%);
   box-shadow: 0px 0px 36px -26px rgb(0 0 0 / 64%);
 }
 

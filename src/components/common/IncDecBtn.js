@@ -38,8 +38,8 @@ const IncDecBtn = () => {
   };
 
   useEffect(() => {
-    console.log(`${counter}`);
-  });
+
+  }, []);
 
   return (
     <Fragment>

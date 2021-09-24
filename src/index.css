@@ -110,6 +110,11 @@ body {
   transition: background 0s;
 }
 
+.ripple-img:hover {
+ opacity: 0.5;
+ transition: 0.5s;
+}
+
 
 /* ===== header ===== */
 header {
@@ -569,4 +574,21 @@ h1 {
   width: 7rem;
 }
 
+
+.checkout-button{
+  display: flex;
+  height: 7rem;
+  width: 40%;
+  background-color: var(--yellow);
+  border: none;
+
+  justify-content: space-evenly;
+  align-items: center;
+  border-top-left-radius: 15% 4rem;
+  border-bottom-left-radius: 15% 4rem;
+}
+
+.checkout-button:hover {
+  opacity: 0.5
+}
 

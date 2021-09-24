@@ -68,6 +68,7 @@ const styleCheckoutButton = {
   alignItems: "center",
   borderTopLeftRadius: "15% 4rem",
   borderBottomLeftRadius: "15% 4rem",
+
 };
 
 const stylePersonsCounter = {
@@ -157,8 +158,8 @@ const Cart = ({ elementsCart, show }) => {
             <span>Persons</span>
             <IncDecBtn />
           </div>
-          <div style={styleCheckoutButton}>
-            <span style={{fontWeight: "bold", fontSize: "1.3rem"}}>Checkout</span>
+          <div style={styleCheckoutButton} className="checkout-button">
+            <span style={{fontWeight: "bold", fontSize: "1.3rem", cursor: 'pointer'}}>Checkout</span>
             <span style={{ display: "flex" }}>
               <img src={Arrow} alt="arrow" style={{ height: "2rem" }} />
             </span>

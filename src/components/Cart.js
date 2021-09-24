@@ -6,76 +6,85 @@ import ProfileIcon from "../assets/icons/747376.svg";
 import CartList from "./CartList";
 import IncDecBtn from "./common/IncDecBtn";
 import Arrow from "../assets/icons/109617.svg";
+import {useSelector} from 'react-redux'
+
 
 // this component is the complete sidebarm, 
 // the list of products on the current cart, 
 // is rendered in a child component of this  (CartList)
 
+const styleEmoji = {
+  height: "4rem",
+  width: "4rem",
+};
+
+const stayleTitle = {
+  display: "flex",
+  flexDirection: "column",
+  height: "10rem",
+  backgroundColor: "trasparent",
+  padding: "0 3rem",
+  // marginTop: "3rem",
+};
+
+const styleParagraph = {
+  display: "flex",
+  // marginLeft: "3rem",
+  fontSize: "1.5rem",
+  justifyContent: "space-between",
+  width: "100%",
+};
+
+const styleSpan = {
+  color: "var(--yellow)",
+};
+
+const styleTotal = {
+  display: "flex",
+  height: "7rem",
+  width: "85%",
+  marginTop: "3rem",
+  justifyContent: "space-between",
+  alignItems: "center",
+  borderBottom: "1px solid var(--grey)",
+};
+
+const styleCheckout = {
+  display: "flex",
+  height: "7rem",
+  width: "85%",
+  marginTop: "2rem",
+  justifyContent: "space-between",
+};
+
+const styleCheckoutButton = {
+  display: "flex",
+  height: "7rem",
+  width: "40%",
+  backgroundColor: "var(--yellow)",
+  border: "none",
+
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  borderTopLeftRadius: "15% 4rem",
+  borderBottomLeftRadius: "15% 4rem",
+};
+
+const stylePersonsCounter = {
+  display: "flex",
+  flexDirection: "column",
+  height: "7rem",
+  width: "40%",
+  justifyContent: "space-evenly",
+};
+
 const Cart = ({ elementsCart, show }) => {
-  const styleEmoji = {
-    height: "4rem",
-    width: "4rem",
-  };
 
-  const stayleTitle = {
-    display: "flex",
-    flexDirection: "column",
-    height: "10rem",
-    backgroundColor: "trasparent",
-    padding: "0 3rem",
-    // marginTop: "3rem",
-  };
 
-  const styleParagraph = {
-    display: "flex",
-    // marginLeft: "3rem",
-    fontSize: "1.5rem",
-    justifyContent: "space-between",
-    width: "100%",
-  };
+  const cartItemsList = useSelector((state) => state.cart);
+  const { cartItems } = cartItemsList;
 
-  const styleSpan = {
-    color: "var(--yellow)",
-  };
-
-  const styleTotal = {
-    display: "flex",
-    height: "7rem",
-    width: "85%",
-    marginTop: "3rem",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderBottom: "1px solid var(--grey)",
-  };
-
-  const styleCheckout = {
-    display: "flex",
-    height: "7rem",
-    width: "85%",
-    marginTop: "2rem",
-    justifyContent: "space-between",
-  };
-
-  const styleCheckoutButton = {
-    display: "flex",
-    height: "7rem",
-    width: "40%",
-    backgroundColor: "var(--yellow)",
-    border: "none",
-
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    borderTopLeftRadius: "15% 4rem",
-    borderBottomLeftRadius: "15% 4rem",
-  };
-
-  const stylePersonsCounter = {
-    display: "flex",
-    flexDirection: "column",
-    height: "7rem",
-    width: "40%",
-    justifyContent: "space-evenly",
-  };
+  let total = cartItems.reduce((sum, item)=>(sum+(item.qty*item.price)),0)
 
   return (
     <aside className={show===true? "cart": 'cart inactive'}>
@@ -138,7 +147,7 @@ const Cart = ({ elementsCart, show }) => {
           <span style={{ fontSize: "2.3rem", fontWeight: "normal" }}>
             Total:
           </span>
-          <span style={{ fontSize: "3rem", fontWeight: "bold" }}> $ 25.95</span>
+          <span style={{ fontSize: "3rem", fontWeight: "bold" }}> $ {total.toFixed(2)}</span>
         </div>
       </div>
 

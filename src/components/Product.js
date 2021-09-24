@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import StarIcon from "../assets/icons/149220.svg";
 import IconBtn from "./common/IconBtn";
 
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
 const styleInfo = {
   display: "flex",
@@ -18,18 +18,27 @@ const styleInfo = {
 const Product = ({ product, inCart, qty }) => {
   const { name, image, qualification, time, id } = product;
 
-  const dispatch= useDispatch()
+  const dispatch = useDispatch();
 
   const addToCartHandler = () => {
-    dispatch(addToCart(id))
+    dispatch(addToCart(id));
   };
+
+  const removeToCartHandler = () => {
+    console.log(product)
+    dispatch(removeFromCart(product));
+  }
+
+  useEffect(() => {
+
+  }, [qty])
 
   return (
     <Fragment>
       {!inCart && (
         <div className="product" onClick={() => addToCartHandler()}>
-          <div className="product-img">
-            <img src={image} alt={name} />
+          <div className="product-img ripple">
+            <img src={image} alt={name} className="ripple-img" />
             <div className="product-tiempo">{time}</div>
           </div>
           <h3>{name}</h3>
@@ -43,8 +52,12 @@ const Product = ({ product, inCart, qty }) => {
       )}
 
       {inCart && (
-        <div className="row-container" style={{ margin: "2rem" }}>
-          <div className="cart-item-img">
+        <div
+          className="row-container ripple-img"
+          style={{ margin: "2rem" }}
+          onClick={() => removeToCartHandler()}
+        >
+          <div className="cart-item-img ripple-img">
             <img
               src={image}
               alt={name}
